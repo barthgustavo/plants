@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: ./mqtt-listener
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./api/src:/app/src
+
+  mqtt-listener:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3000
+    volumes:
+      - ./mqtt-listener/src:/app/src
+  
