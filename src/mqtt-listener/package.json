@@ -2,19 +2,14 @@
   "name": "mqtt-listener",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "npx typescript",
-    "build:watch": "npx typescript -w",
-    "dev": "npx concurrently \"npm run build\" \"npm run dev:run\"",
-    "dev:watch": "npx concurrently \"npm run build:watch\" \"npm run dev:run\"",
-    "dev:run": "npx nodemon lib/index.js",
-    "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -L src/index.ts"
   },
   "author": "Gustavo Barth",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   }
 }
